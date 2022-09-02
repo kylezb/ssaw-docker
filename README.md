@@ -8,7 +8,7 @@ docker run -d \
 --restart=always \
 -p 7000:51422 \
 -p 7777:7777/udp \
--p 7778:27015 \
+-p 7778:27015/udp \
 -p 7779:27131 \
 -v path/to/data:/home/sandstorm/ssaw \
 wurua/ssaw:latest
@@ -19,7 +19,7 @@ wurua/ssaw:latest
 - -v yourpath:/home/sandstorm/ssaw 宿主机目录：容器目录
 - -p xxxx:51422 web管理端口
 - -p xxxx:7777/udp 进程端口
-- -p xxxx:27015 steam查询端口
+- -p xxxx:27015/udp steam查询端口
 - -p xxxx:27131 Rcon管理端口
 - ……
 - 端口请根据 **容器内启用的端口** 按需分配映射，以免造成冲突浪费
