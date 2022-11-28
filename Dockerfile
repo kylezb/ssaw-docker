@@ -1,4 +1,4 @@
-FROM ruby:2.7-slim-buster
+FROM ruby:3.1.3-slim-buster
 
 ENV TZ=Asia/Shanghai
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
@@ -23,7 +23,7 @@ RUN cp sandstorm-admin-wrapper/config/config.toml.docker sandstorm-admin-wrapper
 # source 'https://gems.ruby-china.com'
 RUN cd sandstorm-admin-wrapper/admin-interface && \
     sed -i 's/rubygems.org/gems.ruby-china.com/g' Gemfile && \
-    gem install bundler:1.17.2 && \
+    gem install bundler:2.3.7 && \
     /bin/bash -c bundle
 
 
